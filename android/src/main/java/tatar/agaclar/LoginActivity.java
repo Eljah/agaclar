@@ -65,7 +65,7 @@ public class LoginActivity extends Activity {
                 // Put Http parameter password with value of Password Edit Value control
                // params.put("password", password);
                 // Invoke RESTful Web Service with Http parameters
-                invokeWS(params,urleS,diameterS,latitudeS,longitudeS);
+                invokeWS(params,urleS,latitudeS,longitudeS,diameterS);
             //Toast.makeText(getApplicationContext(), "Please fill the form, don't leave any field blank", Toast.LENGTH_LONG).show();
 
 

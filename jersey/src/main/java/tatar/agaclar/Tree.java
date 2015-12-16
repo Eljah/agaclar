@@ -2,6 +2,8 @@ package tatar.agaclar;
 
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
@@ -66,8 +68,25 @@ public class Tree {
             conpg.close();
         } catch (Exception e) {
             e.printStackTrace();
+            JSONObject obj = new JSONObject();
+            try {
+                obj.put("tag", "tree");
+                obj.put("status", new Boolean(false));
+                obj.put("error_msg", e.toString());
+            } catch (JSONException ej) {
+                // TODO Auto-generated catch block
+            }
+            return obj.toString();
         }
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("tag", "tree");
+            obj.put("status", new Boolean(true));
+            obj.put("error_msg", "");
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+        }
+        return obj.toString();
 
-        return "\"OK\"";
     }
 }

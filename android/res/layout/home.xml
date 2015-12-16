@@ -15,4 +15,14 @@
             android:text="Welcome User"
             android:textSize="25dip" />
 
+    <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="#ff6347"
+            android:onClick="loginUser"
+            android:text="Login"
+            android:textColor="#fff" />
+
 </FrameLayout>
